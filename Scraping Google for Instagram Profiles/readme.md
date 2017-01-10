@@ -11,7 +11,7 @@ Project 1
 <b>The Goal:</b></br>
 Get popular instagram users via popular tags in instagram using google's search bar results.</br>
 
-<b>The folder:</b></br>
+<b>The Folder:</b></br>
 insta_google_scraper</br>
 
 <b>The Process</b>:</br>
