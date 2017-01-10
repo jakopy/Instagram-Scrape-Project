@@ -23,18 +23,17 @@ insta_google_scraper</br>
 <li>Note: The entirety of tags dock was scraped</li>
 </ul>
 
-2.Finding good google urls
-*View the Notes folder
-
-3.Scrape google using tags dock data
-4.Store the scrape data
+2.Finding good google urls</br>
+*View the Notes folder</br>
+3.Scrape google using tags dock data</br>
+4.Store the scrape data</br>
 
 ===========
 Project 2
 ===========
-The Goal:
-Simulate a google url to create a continuous google scraper.
+<b>The Goal:</b></br>
+Simulate a google url to create a continuous google scraper.</br>
 
-The Folder:
+<b>The Folder:</b></br>
 insta_google_scraper_2
 		
