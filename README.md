@@ -1,8 +1,8 @@
 =========
-Mission Statement
+Overview
 =========
 
-This project is filled with experiements to create scrapers to find market place influencers inside of instagram
+This project is to create a instagram scraper and any tool to assist companies interested in finding market place influencers on instagram.
 
 ==========
 What's Inside
