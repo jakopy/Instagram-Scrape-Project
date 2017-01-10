@@ -2,7 +2,7 @@
 Mission Statement
 =========
 
-Cuhlab is a company helps companies find market place influencers
+This project is filled with experiements to create scrapers to find market place influencers inside of instagram
 
 ==========
 What's Inside
