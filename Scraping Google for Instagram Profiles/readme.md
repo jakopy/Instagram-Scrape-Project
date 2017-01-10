@@ -17,16 +17,15 @@ insta_google_scraper</br>
 <b>The Process</b>:</br>
 
 1.Scrape Tags Dock</br>
-<ul>
-<li>Google Chrome's DevTools were used to find ajax requests via the network tab</li>
-<li>You can view information about DevTools here: https://developer.chrome.com/devtools</li>
-<li>Note: The entirety of tags dock was scraped</li>
-</ul>
-
-2.Finding good google urls</br>
+	<ul>
+	<li>Google Chrome's DevTools were used to find ajax requests via the network tab</li>
+	<li>You can view information about DevTools here: https://developer.chrome.com/devtools</li>
+	<li>Note: The entirety of tags dock was scraped</li>
+	</ul>
+2.Find good google urls</br>
 *View the Notes folder</br>
 3.Scrape google using tags dock data</br>
-4.Store the scrape data</br>
+4.Store the scrape data
 
 ===========
 Project 2
