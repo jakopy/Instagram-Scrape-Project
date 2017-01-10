@@ -8,28 +8,26 @@ There are 2 sub-projects of the instagram_google_scrape project. They are discus
 ===========
 Project 1
 ===========
-The Goal:
-Get popular instagram users via popular tags in instagram using google's search bar results.
+<b>The Goal:</b></br>
+Get popular instagram users via popular tags in instagram using google's search bar results.</br>
 
-The folder:
-insta_google_scraper
+<b>The folder:</b></br>
+insta_google_scraper</br>
 
-The Process:
+<b>The Process</b>:</br>
 
-1.Scrape Tags Dock
-*Google Chrome's DevTools were used to find ajax requests via the network tab
-*You can view information about DevTools here: https://developer.chrome.com/devtools
-*Note: The entirety of tags dock was scraped
+1.Scrape Tags Dock</br>
+<ul>
+<li>Google Chrome's DevTools were used to find ajax requests via the network tab</li>
+<li>You can view information about DevTools here: https://developer.chrome.com/devtools</li>
+<li>Note: The entirety of tags dock was scraped</li>
+</ul>
 
 2.Finding good google urls
 *View the Notes folder
 
 3.Scrape google using tags dock data
 4.Store the scrape data
-
-Process Details
-Scraping Tags Dock:
-The entirety of tags dock data has been scraped and placed in a single text document.
 
 ===========
 Project 2
