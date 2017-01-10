@@ -2,7 +2,8 @@
 Overview
 ============
 This project is an experiment to provide the best method of gathering instagram data via scraping google.
-There are 2 sub-projects of the instagram_google_scrape project. They are discussed in detail below.
+There are 2 sub-projects of the instagram_google_scrape project. The sandcloud_scrape project is a test project.
+They are discussed in detail below.
 
 
 ===========
