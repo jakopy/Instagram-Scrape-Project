@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <h1 style="text-decoration:underline;">Showing results for {{search_term}}</h1>
+        
+        {% for row in data %}
+        <a href="{{row[6]}}"> <p style='color:blue;font-size:large'> {{row[0]}}</p></a>
+        <p style="font-size:medium">
+        Followers: {{row[3]}} Following: {{row[4]}} Posts: {{row[5]}} <br />
+        Profile Description: {{row[2]}} <br />
+        </p>
+        {% endfor %}
+    </body>
+
+</html>
