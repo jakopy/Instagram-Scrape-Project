@@ -1,0 +1,25 @@
+Date: 9/22/2016
+
+NOTES ABOUT GOOGLE URLS:
+ 
+View these urls:
+http://stackoverflow.com/questions/24300885/meaning-for-google-homepage-parameters-gfe-rd-gws-rd-ei
+http://stackoverflow.com/questions/18584386/what-does-ei-mean-in-the-google-homepage-url-https-www-google-co-in-gws-rd
+
+ei is a time stamp coded in little endian order view urls below:
+https://deedpolloffice.com/blog/articles/decoding-ei-parameter
+
+HOW TO DORK:
+http://www.techworm.net/2016/04/make-advanced-search-google-using-google-dorking.html
+The dork that we use to find more instagram profiles:
+site:instagram.com/ + profile_name
+
+URL tests:
+ethans computer: https://www.google.com/search?q=site:instagram.com/+%2B+%23surf&num=100&biw=1920&bih=971&ei=JIjkV77NDIuz-AGz1YLIAg&start=100&sa=N
+jacobs eg computer: https://www.google.com/search?q=site:instagram.com/+%2B+%23surf&num=100&ei=VYnkV8PLOomf-wHZkp_4Ag&start=100&sa=N&biw=1745&bih=849
+jacob eg2 computer: https://www.google.com/search?q=site:instagram.com/+%2B+%23surf&num=100&ei=XYzkV_DfNciR-AGQqJGIBg&start=100&sa=N&biw=1745&bih=849
+jacob eg3 computer: https://www.google.com/search?q=site:instagram.com/+%2B+%23surf&num=100&ei=t4zkV6S3NIL--AG-t70w&start=100&sa=N&biw=1745&bih=849
+jacobs mf computer: https://www.google.com/search?q=site:instagram.com/+%2B+%23surf&num=100&biw=1536&bih=723&ei=3InkV-3sMIbf-QGklYaoAg&start=100&sa=N
+jacobs ch computer: https://www.google.com/search?q=site:instagram.com/+%2B+%23surf&num=100&ei=HozkV-fQIMGu-QGrnYPoCQ&start=100&sa=N&biw=1920&bih=971
+https://www.google.com/search?q=site:instagram.com/+%2B+%22bill%22&num=100&biw=1745&bih=849&ei=XEnYV6aOBYOi-AH5u7WoDQ&start=100&sa=N
+https://www.google.com/search?q=site:instagram.com/+%2B%22bill%22&num=100&ei=Ii3kV4_LIsTOjwTOnqfQCg&start=100&sa=N&biw=1745&bih=849
