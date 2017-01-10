@@ -2,7 +2,7 @@
 Overview
 =========
 
-This project is to create a instagram scraper and tools to assist companies interested in finding market place influencers on instagram.
+This projects goal is to build an instagram scraper and other tools to assist companies interested in finding market place influencers on instagram.
 
 ==========
 What's Inside
