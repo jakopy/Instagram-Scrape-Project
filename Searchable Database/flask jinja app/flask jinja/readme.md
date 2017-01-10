@@ -1,4 +1,4 @@
-==================
+ an==================
 Requirements
 =================
 <b>Python v 2.7</b></br>
@@ -24,4 +24,5 @@ How This Application Works
 The app is created with flask. </br>
 Urls are created starting with localhost with a path </br>
 When a user goes to the proper url, Flask listens for when the user enters in the fields and then clicks the submit button </br>
-When the user clicks the submit button flask renders
+When the user clicks the submit button flask renders a webpage via jinja
+The data that is rendered through jinja comes from a sqlite database located in the data folder
