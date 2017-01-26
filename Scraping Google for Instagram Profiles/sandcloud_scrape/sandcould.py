@@ -1,8 +1,9 @@
-search_term = "cake"
-
-
+# ENTER YOUR SEARCH TERM HERE
+search_term = "sandcloud+towels"
 
 import requests
+from bs4 import BeautifulSoup
+
 pagenumbers = ["0","100","200"]
 all_urls = []
 all_names = []
@@ -10,7 +11,6 @@ for pages in pagenumbers:
     page = "https://www.google.com/search?q=site:instagram.com+%2B+"+search_term+"&num=100&biw=1536&bih=735&ei=skNxWJu0A4PJmwG-l7PACA&start="+pages+"&sa=N"
     r = requests.get(page)
     data = r.text
-    from bs4 import BeautifulSoup
     soup = BeautifulSoup(data, 'html.parser')
 
     h3s = soup.find_all('h3')
