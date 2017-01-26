@@ -14,9 +14,9 @@ Requirements
 ===========
 Running Tests
 ===========
-Once this file is downloaded off of github go to the directory where the .py file is located. </br>
-to run the .py file and see the results RIGHT click on the .py file and click EDIT in IDLE </br>
-Once in IDLE you can switch the search_term to whatever you desire by typing in a search term within the quotes </br>
+1. Once this file is downloaded off of github go to the directory where the .py file is located. </br>
+2. To run the .py file and see the results RIGHT click on the .py file and click EDIT in IDLE </br>
+3. Once in IDLE you can switch the search_term to whatever you desire by typing in a search term within the quotes </br>
 example: </br>
 search_term = "cake" </br>
-Then to run the module go under the tab labled RUN and choose RUN MODULE </br>
+4. Then to run the module go under the tab labled RUN and choose RUN MODULE </br>
