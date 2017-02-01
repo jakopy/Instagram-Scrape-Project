@@ -1,4 +1,4 @@
-search_term = "money"
+search_term = "sandcloud+towels"
 
 import requests
 from random import randint
