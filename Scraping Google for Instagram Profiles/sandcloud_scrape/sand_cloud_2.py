@@ -8,6 +8,7 @@ all_urls = []
 all_names = []
 new_pages = []
 for pages in pagenumbers:
+    print "please wait gathering users"
     page = "https://www.google.com/search?q=site:instagram.com+%2B+"+search_term+"&num=100&biw=1536&bih=735&ei=7xySWOiBIIrLmwHZ0r2QDw&start="+pages+"&sa=N"
     r = requests.get(page)
     random_sleep = randint(5,7)
