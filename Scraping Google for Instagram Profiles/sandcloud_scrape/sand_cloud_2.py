@@ -58,9 +58,12 @@ for url in urls:
             name = url.split("https://www.instagram.com/")[1]
             name = name.replace("/","")
         if "www." not in url:
-            print url
-            name = url.split("https://instagram.com/")[1]
-            name = name.replace("/","")
+            if "https://" in url:
+                name = url.split("https://instagram.com/")[1]
+                name = name.replace("/","")
+            if "http://" in url:
+                name = url.split("https://instagram.com/")[1]
+                name = name.replace("/","")
         r = requests.get(url)
         data= r.text
         json_data = data.split("window._sharedData = ")[1]
