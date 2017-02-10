@@ -1,0 +1,21 @@
+1484083121270	geckodriver	INFO	Listening on 127.0.0.1:59389
+1484083123191	mozprofile::profile	INFO	Using profile path C:\Users\JACOBI~1\AppData\Local\Temp\rust_mozprofile.ypgL6Xoktd18
+1484083123208	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1484083123242	geckodriver::marionette	INFO	Connecting to Marionette on localhost:59395
+1484083124464	Marionette	INFO	Listening on port 59395
+1484083126473	Marionette	INFO	startBrowser 7e5e5ab6-ddce-456f-83a9-c556aa21984f
+1484083126489	Marionette	INFO	sendAsync 7e5e5ab6-ddce-456f-83a9-c556aa21984f
+1484083126723	Marionette	INFO	sendAsync 7e5e5ab6-ddce-456f-83a9-c556aa21984f
+console.error: 
+  Could not write session state file 
+  Message: Win error 32 during operation move on file C:\Users\JACOBI~1\AppData\Local\Temp\rust_mozprofile.ypgL6Xoktd18\sessionstore-backups\recovery.js.tmp (The process cannot access the file because it is being used by another process.
+)
+  
+1484083130214	Marionette	INFO	sendAsync 7e5e5ab6-ddce-456f-83a9-c556aa21984f
+1484083133229	Marionette	INFO	sendAsync 7e5e5ab6-ddce-456f-83a9-c556aa21984f
+1484083136254	Marionette	INFO	sendAsync 7e5e5ab6-ddce-456f-83a9-c556aa21984f
+1484083139413	Marionette	INFO	sendAsync 7e5e5ab6-ddce-456f-83a9-c556aa21984f
+1484083142435	Marionette	INFO	sendAsync 7e5e5ab6-ddce-456f-83a9-c556aa21984f
+1484083145548	Marionette	INFO	sendAsync 7e5e5ab6-ddce-456f-83a9-c556aa21984f
+1484083148568	Marionette	INFO	sendAsync 7e5e5ab6-ddce-456f-83a9-c556aa21984f
+1484083151694	Marionette	INFO	sendAsync 7e5e5ab6-ddce-456f-83a9-c556aa21984f
