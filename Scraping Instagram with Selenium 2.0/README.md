@@ -1,5 +1,5 @@
 ======
-Installation
+ Installation
 ========
 For A Windows Machine:
 
@@ -11,6 +11,6 @@ For A Windows Machine:
 ========
 Module Requirements
 ========
-python2
-pip install selenium==2.53
-pip install requests
+python2 <\br>
+pip install selenium==2.53 <\br>
+pip install requests <\br>
