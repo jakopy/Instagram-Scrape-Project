@@ -16,17 +16,19 @@ def scrape_posts(user,photocrawlnumber):
     driver.get(url)
     
     if photocrawlnumber == False:
-            Number_of_posts = driver.find_element_by_css_selector("span._bkw5z")
-            Number_of_posts = Number_of_posts.text
-            Number_of_posts = Number_of_posts.replace(",","")
-            Number_of_posts = int(Number_of_posts)
-            print "NUMBER OF POSTS THAT CAN BE SCRAPED: " + str(Number_of_posts)
+        Number_of_posts = driver.find_element_by_css_selector("span._bkw5z")
+        Number_of_posts = Number_of_posts.text
+        Number_of_posts = Number_of_posts.replace(",","")
+        Number_of_posts = int(Number_of_posts)
+        photocrawlnumber = Number_of_posts
+        print "NUMBER OF POSTS THAT CAN BE SCRAPED: " + str(Number_of_posts)
     else:
         photocrawlnumber += 1
     
 
     number = photocrawlnumber
 
+    
     def LOADPOSTS(number):
         SCROLL_UP   = "window.scrollTo(0, 0);"
         SCROLL_DOWN = "window.scrollTo(0, document.body.scrollHeight);"
@@ -72,13 +74,16 @@ def scrape_posts(user,photocrawlnumber):
                     likenum = likenum.text
                     video = False
                 except Exception as e:
-                    video = True
-                    viewsclicker = driver.find_element_by_class_name("_9jphp")
-                    viewsclicker.click()
-                    likenum = driver.find_element_by_class_name(CSS_VIDEO_LIKES)
-                    likenum = likenum.text
-                    driver.execute_script("window.history.go(-1)")
-                    driver.execute_script("window.history.go(1)")
+                    try:
+                        video = True
+                        viewsclicker = driver.find_element_by_class_name("_9jphp")
+                        viewsclicker.click()
+                        likenum = driver.find_element_by_class_name(CSS_VIDEO_LIKES)
+                        likenum = likenum.text
+                        driver.execute_script("window.history.go(-1)")
+                        driver.execute_script("window.history.go(1)")
+                    except Exception as e:
+                        print "nonnumerical likenumber found"
                 try:
                     WebDriverWait(driver,5).until(
                         EC.presence_of_element_located((By.CSS_SELECTOR,"div._ovg3g"))
@@ -93,7 +98,19 @@ def scrape_posts(user,photocrawlnumber):
 ##                        print name
                 except Exception as e:
 ##                    print "NO TAGGED PERSON IN PHOTO HERE!"
-                    caption = driver.find_element_by_css_selector("h1")
+                    try:
+                        data = driver.page_source
+                        caption = data.split('"caption": "')[1]
+                        caption = caption.split('", "comments":')[0]
+                        words = caption.split(" ")
+                        tagged_people = []
+                        for word in words:
+                            if "@" in word:
+                                url = word.replace("@","")
+                                url = "https://www.instagram.com/"+url
+                                tagged_people_urls.append(url)
+                    except Exception as e:
+                        print "No caption to be found"
 ##                    print caption.text
 ##                print video
 ##                print likenum
@@ -127,6 +144,17 @@ class Downloader(threading.Thread):
         r = requests.get(url)
         data= r.text
         try:
+            likes = data.split('"likes": {"count": ')
+            likes = likes[1:len(likes)]
+            like_sum = 0
+            number_of_likes = 0
+            for i in likes:
+                likes_count = i.split('}}')[0]
+                print likes_count
+                like_sum += int(likes_count)
+                number_of_likes += 1
+            average_likes = like_sum / number_of_likes
+            average_likes = "average_likes: " + str(average_likes)
             person_in_profile
             url
             followers = "followers: " + data.split('followed_by": {"count": ')[1].split("}")[0]
@@ -139,10 +167,13 @@ class Downloader(threading.Thread):
         except Exception as e:
             message = "No data for " + person_in_profile
             data_found = False
+
+
         if data_found == True:
             with open(filename,'a') as f:
                 f.write("\n"+person_in_profile+"\n")
                 f.write(url+"\n")
+                f.write(average_likes+"\n")
                 f.write(followers+"\n")
                 f.write(following+"\n")
                 f.write(post+"\n")
@@ -173,7 +204,7 @@ if __name__ == "__main__":
     #####################
 
     profile = "nectar"
-    number_of_posts_to_scrape = 20
+    number_of_posts_to_scrape = False
 ##    number_of_posts_to_scrape = False
 
     ######################
