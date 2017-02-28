@@ -17,6 +17,7 @@ View The Application
 2. Go to any browser and type in http://127.0.0.1:5000/instagram_search</br>
 3. Type in a for the Search Term, 0 for min followers, 100000000000 for max followers then click submit</br>
 4. Once the submit button is clicked, you can view an instagram profile by clicking on the blue text</br>
+Note: Since the data is static in this application you may not be able to view a person's profile if the person's profile no longer exists on instagram. </br>
 
 ==============
 How This Application Works
@@ -26,3 +27,4 @@ Urls are created starting with localhost with a path </br>
 When a user goes to the proper url, Flask listens for when the user enters in the fields and then clicks the submit button </br>
 When the user clicks the submit button flask renders a webpage via jinja </br>
 The data that is rendered through jinja comes from a sqlite database located in the data folder
+
