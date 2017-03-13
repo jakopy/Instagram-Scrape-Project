@@ -90,28 +90,35 @@ def scrape_posts(user,photocrawlnumber):
                         )
                     driver.find_element_by_css_selector("div._ovg3g").click()
                     people_in_photo = driver.find_elements_by_css_selector("a._ofpcv")
+                    current_tagged_length = len(tagged_people_urls)
                     for person in people_in_photo:
                         url = person.get_attribute("href")
+##                        print "PERSON TAGGED IN PHOTO!!"
+##                        print url
                         tagged_people_urls.append(url)
                         name = url.split("https://www.instagram.com/")[1]
                         name = name.replace("/","")
 ##                        print name
+                    new_tagged_length = len(tagged_people_urls)
+                    if new_tagged_length <= current_tagged_length or new_tagged_length == 0:
+                        try:
+                            r = requests.get(driver.current_url)
+                            rdata = r.text
+                            caption = rdata.split('"caption": "')[1]
+                            caption = caption.split('", "comments":')[0]                        
+                            words = caption.split(" ")
+                            tagged_people = []
+                            for word in words:
+                                if "@" in word:
+##                                    print word
+                                    url = word.replace("@","")
+                                    url = "https://www.instagram.com/"+url
+                                    tagged_people_urls.append(url)
+                        except Exception as e:
+                            print "NO TAGGED PERSON IN PHOTO HERE!"
                 except Exception as e:
-##                    print "NO TAGGED PERSON IN PHOTO HERE!"
-                    try:
-                        data = driver.page_source
-                        caption = data.split('"caption": "')[1]
-                        caption = caption.split('", "comments":')[0]
-                        words = caption.split(" ")
-                        tagged_people = []
-                        for word in words:
-                            if "@" in word:
-                                url = word.replace("@","")
-                                url = "https://www.instagram.com/"+url
-                                tagged_people_urls.append(url)
-                    except Exception as e:
-                        print "No caption to be found"
-##                    print caption.text
+                    "no tagged, no caption"
+##                            print caption.text
 ##                print video
 ##                print likenum
 ##                print "========================================="
@@ -150,7 +157,7 @@ class Downloader(threading.Thread):
             number_of_likes = 0
             for i in likes:
                 likes_count = i.split('}}')[0]
-                print likes_count
+##                print likes_count
                 like_sum += int(likes_count)
                 number_of_likes += 1
             average_likes = like_sum / number_of_likes
@@ -202,9 +209,14 @@ if __name__ == "__main__":
     #####################
     ### INPUTS GO HERE ##
     #####################
+    findtag = False
+    tag = "richmondmagazine"    
+    profile = "renewrichmond"
+    number_of_posts_to_scrape = 20
+    
+    if findtag == True:
+        profile = "explore/tags/"+tag
 
-    profile = "nectar"
-    number_of_posts_to_scrape = False
 ##    number_of_posts_to_scrape = False
 
     ######################
@@ -213,12 +225,35 @@ if __name__ == "__main__":
     
     driver = webdriver.Firefox()
     urls = scrape_posts(profile,number_of_posts_to_scrape)
-
     new_urls = []
+    for url in urls:
+        if findtag == False:
+            url = profile+url
+        else:
+            url = tag+url
+        for i in ')"],':
+            url = url.replace(i,"")
+        url = url.replace("\\","")
+        url = url.replace("'s","")
+        if "." in url[-1]:
+            url = url[0:len(url)-1]
+        if "/" in url[-1]:
+            url = url[0:len(url)-1]
+        if "!" in url[-1]:
+            url = url[0:len(url)-1]
+        if "?" in url[-1]:
+            url = url[0:len(url)-1]
+        if ":" in url[-1]:
+            url = url[0:len(url)-1]
+        if ";" in url[-1]:
+            url = url[0:len(url)-1]
+        if ".com" not in url:
+            new_urls.append(url)
+        if ".com" not in url.split("www.instagram.com/")[1]:
+            new_urls.append(url)
+    urls = list(set(new_urls))
     for i in urls:
-        new_urls.append(profile+i)
-    urls = new_urls
-    
+        print i
     path = "data/"+profile+".txt"
     filechecker = os.path.isfile(path)
     if filechecker == False:
