@@ -1,4 +1,3 @@
-======
 Installation
 ========
 For A Windows Machine:
