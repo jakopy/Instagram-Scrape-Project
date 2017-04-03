@@ -1,4 +1,3 @@
-==================
 Requirements
 =================
 <b>Python v 2.7</b></br>
@@ -9,7 +8,6 @@ Modules: </br>
 <li><a href="https://docs.python.org/2/library/sqlite3.html">Sqlite3</a></li>
 </ul>
 
-=====================
 View The Application
 ====================
 <b>Steps</b></br>
@@ -19,7 +17,6 @@ View The Application
 4. Once the submit button is clicked, you can view an instagram profile by clicking on the blue text</br>
 Note: Since the data is static in this application you may not be able to view a person's profile if the person's profile no longer exists on instagram. </br>
 
-==============
 How This Application Works
 =============
 The app is created with flask. </br>
