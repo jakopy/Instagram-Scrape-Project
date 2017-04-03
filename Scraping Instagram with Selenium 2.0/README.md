@@ -1,4 +1,3 @@
-======
  Installation
 ========
 
@@ -7,14 +6,12 @@
 3. install selenium version 2.53 by going to command line and typing in pip install selenium==2.53 and pip install requests
 4. Run any python program to see what it does, enjoy :)
 
-========
 Module Requirements
 ========
 python2 </br>
 pip install selenium==2.53 </br>
 pip install requests </br>
 
-======
 How Scrape Different Profiles
 =======
 
